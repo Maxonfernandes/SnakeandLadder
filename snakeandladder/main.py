@@ -32,13 +32,11 @@ def printboard():
     board = [['' for _ in range(10)] for _ in range(10)]
     players = {'A': a, 'B': b, 'C': c, 'D': d}
 
-    # Fill the board with numbers
     for i in range(100):
         row = 9 - i // 10
         col = i % 10 if row % 2 == 0 else 9 - i % 10
         board[row][col] = f"{i+1:2d}"
 
-    # Add players to the board
     for player, pos in players.items():
         if 0 < pos <= 100:
             row = 9 - (pos - 1) // 10
